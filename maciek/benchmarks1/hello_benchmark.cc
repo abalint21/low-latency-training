@@ -56,8 +56,8 @@ static void push_back_small_vector(benchmark::State &state) {
   state.counters["allocations"] = m.counters().malloc_calls();
 }
 
-BENCHMARK_TEMPLATE(push_back, std::vector<int>)->Range(1024, 128 * 1024);
-BENCHMARK(push_back_small_vector)->Range(1024, 128 * 1024);
-BENCHMARK(push_back_reserve)->Range(1024, 128 * 1024);
+//BENCHMARK_TEMPLATE(push_back, std::vector<int>)->Range(1024, 128 * 1024);
+BENCHMARK(push_back_small_vector)->Arg(1024);
+BENCHMARK(push_back_reserve)->Arg(1024);
 
 BENCHMARK_MAIN();

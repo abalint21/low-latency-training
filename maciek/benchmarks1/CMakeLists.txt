@@ -1,4 +1,5 @@
 add_executable(hello_benchmark hello_benchmark.cc)
+add_compile_options(-fno-omit-frame-pointer)
 target_link_libraries(hello_benchmark benchmark)
 
 add_executable(accumulate_benchmark accumulate.cc)
